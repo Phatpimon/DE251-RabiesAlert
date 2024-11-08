@@ -5,54 +5,137 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User_Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container">
-        <h1>User Report</h1>
-        <!--สร้างฟอร์มแจ้งเหตุ-->
-        <form action="/ submit" method="post" enctype="multipart/form-data"> <!--ส่งdataไปทีsubmit ฟอร์มมีการอัปโหลดไฟล์ -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User_Report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Navbar เริ่มต้น -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <img src="/kuromi2.webp" alt="kuromi" width="200" height="100">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#report" id="report-link">Report</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar สิ้นสุด -->
+    
+        <div class="container">
+            <h1>แจ้งเบาะแสสัตว์ติดโรคพิษสุนัขบ้า</h1>
+            <!--สร้างฟอร์มแจ้งเหตุ-->
+            <form action="/ submit" method="post" enctype="multipart/form-data"> <!--ส่งdataไปทีsubmit ฟอร์มมีการอัปโหลดไฟล์ -->
+    
+                <p id="head1">ข้อมูลของสัตว์ที่พบ</p>
+    
+                <!--กรอกจังหวัด รอทำphp jq ajaxเพิ่ม-->
+                <label for="province">จังหวัด :</label>
+                <select id="province" name="province" required>
+                    <option value=" " disabled selected>กรุณาเลือกจังหวัด</option>
+                    <option value="กรุงเทพ" id="01" >กรุงเทพมหานคร</option>
+                </select>
+    
+                <!--อำเภอ/เขต-->
+                <label for="amphur">อำเภอ/เขต :</label>
+                <input type="text" id="amphur" name="amphur" required>
+    
+                <!--ตำบล/แขวง-->
+                <label for="district">ตำบล/เขต :</label>
+                <input type="text" id="district" name="district" required>
+    
+                <!--รหัสไปร-->
+                <label for="geography">รหัสไปรษณีย์ :</label>
+                <input type="number" id="geography" name="geography" required>
+    
+                <!--ชนิดสัตว์ --> 
+                <br><label for="animal_type">ชนิดของสัตว์ :</label>
+                <select id="animal_type" name="animal_type" required>
+                    <option value=" " disabled selected>กรุณาระบุชนิดสัตว์</option>
+                    <option value="dog" id="01" >สุนัข</option>
+                    <option value="cat" id="02" >แมว</option>
+                    <option value="Rabbit" id="03" >กระต่าย</option>
+                </select>
+    
+                <!--ลักษณะของสัตว์เบื้องต้น รายละเอียดการแจ้งเหตุ -->
+                <label for="details1"> ลักษณะของสัตว์เบื้องต้น : </label>
+                <textarea id="details1" name="details1" required></textarea>
+    
+                <!--ข้อมูลอาการเบื้องต้น รายละเอียดการแจ้งเหตุ -->
+                <label for="details2">ข้อมูลอาการเบื้องต้น :</label>
+                <textarea id="details2" name="details2" required></textarea>
+    
+                <!-- อัปโหลดไฟล์ เช่น รูปภาพ -->
+                <br><label for="file">แนบไฟล์ :</label>
+                <input type="file" id="file" name="file" accept="image/*">
+    
+                <!-- ฟิลด์เลือกวันที่ที่พบ -->
+                <br><label for="date">วันที่พบ :</label>
+                <input type="date" id="date" name="date" required>
+    
+                <p id="haed2"> ข้อมูลผู้แจ้ง </p>
+    
+                <!-- ชื่อ -->
+                <label for="contact_fname">ชื่อ :</label>
+                <input type="text" id="contact_fname" name="contact_fname" required>
+    
+                <!-- นามสกุล -->
+                <label for="contact_lname">นามสกุล :</label>
+                <input type="text" id="contact_lname" name="contact_lname" required>
+    
+                <!-- ฟิลด์กรอกเบอร์โทรศัพท์ -->
+                <label for="contact_phone">เบอร์โทรศัพท์ :</label>
+                <input type="tel" id="contact_phone" name="contact_phone" required>
+                
+                <!-- ปุ่มสำหรับบันทึกข้อมูลและส่งฟอร์ม -->
+                <br><button type="submit">บันทึก</button>
+    
+                <!-- ปุ่มสำหรับรีเซ็ตหรือล้างข้อมูลในฟอร์ม -->
+                <button type="reset">ยกเลิก</button>
+    
+    
+            </form>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-            <!--กรอกจังหวัด รอทำphp jq ajaxเพิ่ม-->
-            <label for="province">จังหวัด :</label>
-            <select id="province" name="province" required>
-                <option value=" " disabled selected>กรุณาเลือกจังหวัด</option>
-                <option value="กรุงเทพ" id="01" >กรุงเทพมหานคร</option>
-            </select>
-
-            <!--อำเภอ/เขต-->
-            <label for="amphur">อำเภอ/เขต :</label>
-            <input type="text" id="amphur" name="amphur" required>
-
-            <!--ตำบล/แขวง-->
-            <label for="district">ตำบล/เขต :</label>
-            <input type="text" id="district" name="district" required>
-
-            <!--รหัสไปร-->
-            <label for="geography">รหัสไปรษณีย์ :</label>
-            <input type="number" id="geography" name="geography" required>
-
-            <!--ชนิดสัตว์ --> 
-            <br><label for="animal_type">ชนิดของสัตว์ :</label>
-            <select id="animal_type" name="animal_type" required>
-                <option value=" " disabled selected>กรุณาระบุชนิดสัตว์</option>
-                <option value="dog" id="01" >สุนัข</option>
-                <option value="cat" id="02" >แมว</option>
-                <option value="Rabbit" id="03" >กระต่าย</option>
-            </select>
-
-            <!--ลักษณะของสัตว์เบื้องต้น รายละเอียดการแจ้งเหตุ -->
-            <label for="details1"> ลักษณะของสัตว์เบื้องต้น : </label>
-            <textarea id="details1" name="details1" required></textarea>
-
-            <!--ข้อมูลอาการเบื้องต้น รายละเอียดการแจ้งเหตุ -->
-            <label for="details2">ข้อมูลอาการเบื้องต้น :</label>
-            <textarea id="details2" name="details2" required></textarea>
-
-            
-            
-
-
-        </form>
-    </div>
+        <script>
+            window.onload = function() {
+                var currentLocation = window.location.href;
+                var menuItems = document.querySelectorAll('.navbar-nav .nav-item a');
+                menuItems.forEach(function(item) {
+                    if (currentLocation.includes(item.getAttribute('href'))) {
+                        item.classList.add('active');
+                    }
+                });
+            };
+        </script>
+    
 </body>
 </html>

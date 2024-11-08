@@ -1,0 +1,135 @@
+/* ตกแต่งพื้นหลังและฟอนต์ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6fb; /* สีพื้นหลังอ่อน */
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ตกแต่ง container */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ตกแต่ง h1 */
+h1 {
+    color: #5b456c; /* สีม่วงหม่น */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ตกแต่ง p ที่เป็นหัวข้อ */
+#head1, #haed2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5b456c; /* สีม่วงหม่น */
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+/* ตกแต่ง label */
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* ตกแต่ง input, select, textarea */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d8b4d9; /* สีขอบม่วงหม่น */
+    border-radius: 5px;
+    background-color: #f4f0f5; /* พื้นหลังอ่อน */
+    color: #4a4a4a;
+}
+
+/* ตกแต่ง input เมื่อโฟกัส */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #5b456c; /* ขอบสีเข้มเมื่อโฟกัส */
+    outline: none;
+}
+
+/* ตกแต่งปุ่ม submit และ reset */
+button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #2dd61a; /* สีพื้นหลังปุ่ม */
+    color: #fff; /* สีข้อความปุ่ม */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #432d54; /* เปลี่ยนสีปุ่มเมื่อ hover */
+}
+
+/* ตกแต่งปุ่ม reset */
+button[type="reset"] {
+    background-color: red; /* สีแดงสำหรับปุ่มยกเลิก */
+}
+
+button[type="reset"]:hover {
+    background-color: #a492ad; /* เปลี่ยนสีปุ่มยกเลิกเมื่อ hover */
+}
+
+/* สไตล์สำหรับ Navbar */
+.navbar {
+    background-color: #d5c2f4; /* สีม่วงหม่นอ่อน */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #4e347e; /* สีม่วงเข้ม */
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #b399d7; /* สีม่วงเข้มขึ้นเมื่อ hover */
+    color: white;
+}
+
+.navbar-nav .nav-item a#report-link.active {
+    color: pink; /* หรือสีที่คุณต้องการให้เป็น active */
+}
+
